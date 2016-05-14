@@ -53,6 +53,11 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+# Reload the browser automatically whenever files change
+configure :development do
+    activate :livereload
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -69,4 +74,21 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+# Deploy configuration
+activate :deploy do |deploy|
+    # Rsync Deploy Method
+    deploy.method = :git
+
+    # Git Deploy Method
+    # deploy.method = :git
+    # # Optional Settings
+    # deploy.remote   = 'origin' # remote name or git url, default: origin
+    # deploy.branch   = 'deploy' # default: gh-pages
+    # deploy.strategy = :force_push # commit strategy: can be :force_push or :submodule, default: :force_push
+    #
+    # commit_message = `git log --pretty=oneline --abbrev-commit -n1`.strip
+    #
+    # deploy.commit_message = commit_message
 end
