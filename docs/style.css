@@ -1,0 +1,23 @@
+a { color: white; }
+a:visited { color: lightgray; }
+
+@keyframes wacky {
+    from {
+        letter-spacing: default;
+        transform: rotateZ(-4deg)
+    }
+    to {
+        letter-spacing: 0.05em;
+        transform: rotateZ(4deg)
+    }
+}
+
+body {
+    font-size: 0.5rem;
+}
+@media (min-width: 600px) {
+    body {
+        font-size: 2rem;
+    }
+}
+
