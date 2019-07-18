@@ -15,7 +15,6 @@ const paths = [
 ]
 
 const randomIndex = Math.floor(Math.random()*paths.length)
-console.log(randomIndex)
 const chosenPath = paths[randomIndex]
 
 model.src = chosenPath.glb;
