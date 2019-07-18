@@ -1,23 +1,65 @@
-a { color: white; }
-a:visited { color: lightgray; }
+a { color: blue; }
+a:visited { color: mediumvioletred; }
 
-@keyframes wacky {
+@keyframes wacky-rotation {
+    from {
+        transform: rotatez(-4deg)
+    }
+    to {
+        transform: rotatez(4deg)
+    }
+}
+
+@keyframes wacky-letter-spacing {
     from {
         letter-spacing: default;
-        transform: rotateZ(-4deg)
     }
     to {
         letter-spacing: 0.05em;
-        transform: rotateZ(4deg)
     }
 }
 
 body {
-    font-size: 0.5rem;
+    font-size: 2.25rem;
+    background-image: url(images/pizza-slice.png);
+    background-size: 3em 3em;
+    overflow-x: hidden;
+    background-color: rgb(200, 100, 0);
+    font-family: sans-serif;
+    color: rgb(200, 100, 0);
+    margin: 0 10%;
 }
+
+#title, details, span, p, ul {
+    /* border: 1px solid red; */
+    background: rgba(200, 200, 0, 0.4);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+}
+
+#title {
+    text-align: center;
+    animation: wacky-rotation 2s infinite ease-in-out;
+    animation-direction: alternate;
+}
+
+model-viewer {
+    width: 60vw;
+    height: 60vw;
+    margin: 0 auto;
+}
+
 @media (min-width: 600px) {
     body {
         font-size: 2rem;
     }
+    #title {
+        animation: wacky-rotation 2s infinite ease-in-out,
+                   wacky-letter-spacing 2s infinite ease-in-out;
+        animation-direction: alternate;
+    }
+    model-viewer {
+        width: 35vw;
+        height: 35vw;
+    }
 }
-

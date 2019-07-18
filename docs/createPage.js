@@ -19,13 +19,12 @@ console.log(randomIndex)
 const chosenPath = paths[randomIndex]
 
 model.src = chosenPath.glb;
-model.style = 'width: 80vw; height: 50vh;'
 model.setAttribute('ios-src', chosenPath.usdz)
 model.setAttribute('ar', '')
 model.setAttribute('quick-look-browsers', 'safari chrome')
 model.setAttribute('auto-rotate', '')
 model.setAttribute('camera-controls', '')
-model.setAttribute('background-color', 'rgb(200, 0, 0)')
+model.setAttribute('background-color', 'rgb(200, 100, 0)')
 model.setAttribute('preload', '')
 
 
